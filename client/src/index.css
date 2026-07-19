@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import "@neondatabase/neon-js/ui/tailwind";
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Cormorant+Garamond:ital@1&display=swap');
+
+@theme {
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif; /* italic taglines */
+  --color-background: #2E2A27,;   
+  --color-foreground: #F7F2EC;  
+  --color-muted: #B9B0A2;        
+  --color-border: #443E39;       
+  --color-card: #38322E;         
+  --color-accent: #C96A4E;       
+  --color-accent-hover: #D97F63; 
+
+
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Override Better Auth skeleton colors */
+  [data-slot="skeleton"],
+  .animate-pulse {
+    background-color: var(--color-border) !important;
+  }
+}
