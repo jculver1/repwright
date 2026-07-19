@@ -1,3 +1,20 @@
-export default function Home () {
-    return <div>Profile</div>
+import { Navigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+
+export default function Home() {
+  const { user, isLoading } = useAuth();
+  const plan = false;
+
+  if (!user && !isLoading) {
+    return (<Navigate
+      to="/auth/sign-in"
+      replace />);
+  }
+
+  if (plan) {
+    return (<Navigate
+      to="/onboarding"
+      replace />);
+  }
+  return (<div>Profile</div>);
 }
